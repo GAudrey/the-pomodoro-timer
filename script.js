@@ -41,7 +41,7 @@ function pauseTimer(){
     clearInterval(interval)
 }
 
-function stopTimer(){
+function resetTimer(){
     clearInterval(interval)
     min = Math.floor((fixTime/60));
     displaySec = fixTime%60;
@@ -67,9 +67,9 @@ pauseBtn.addEventListener('click', () =>{
     pauseTimer();
 })
 
-stopBtn.addEventListener('click', () =>{
+resetBtn.addEventListener('click', () =>{
     if (startBtnClicked == false){
         startBtnClicked = true;
     }
-    stopTimer();
+    resetTimer();
 })
