@@ -1,35 +1,28 @@
-let pomodoro = document.getElementById('pomodoro-timer');
+const pomodoro = document.getElementById('pomodoro-timer');
 
 let sec = 120;
 let min = Math.floor((sec/60));
 let displaySec = sec%60;
-let interval;
-let startBtnClicked = true;
-
-pomodoro.textContent = `${min} : ${displaySec}`;
 
 function displayTime(){
     if (displaySec < 10){
-        pomodoro.textContent = `${min} : 0${displaySec}`;
-        console.log("sec < 10")
+        pomodoro.textContent = `${min}:0${displaySec}`;
         if (min < 10 && displaySec < 10){
-            pomodoro.textContent = `0${min} : 0${displaySec}`;
-            console.log("< 10 min and sec")
+            pomodoro.textContent = `0${min}:0${displaySec}`;
         }
     }
     else if (min < 10){
-        pomodoro.textContent = `0${min} : ${displaySec}`;
-        console.log("min < 10")
+        pomodoro.textContent = `0${min}:${displaySec}`;
         if (min < 10 && displaySec < 10){
-            pomodoro.textContent = `0${min} : 0${displaySec}`;
-            console.log("< 10 min and sec")
+            pomodoro.textContent = `0${min}:0${displaySec}`;
         }
     }
     else{
-        pomodoro.textContent = `${min} : ${displaySec}`;
-        console.log("tout baigne")
+        pomodoro.textContent = `${min}:${displaySec}`;
     }
 }
+
+displayTime()
 
 function startTimer() {
     min = Math.floor((sec/60));
@@ -41,9 +34,13 @@ function startTimer() {
     }
 }
 
+let interval;
+
 function stopTimer(){
     clearInterval(interval)
 }
+
+let startBtnClicked = true;
 
 startBtn.addEventListener('click', () =>{
     if (startBtnClicked == true){
