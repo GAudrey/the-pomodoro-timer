@@ -1,6 +1,6 @@
 const pomodoro = document.getElementById('pomodoro-timer');
 
-let fixTime = 120;
+let fixTime = 1500;
 let sec = fixTime;
 let min = Math.floor((sec/60));
 let displaySec = sec%60;
@@ -55,7 +55,7 @@ let startBtnClicked = true;
 startBtn.addEventListener('click', () =>{
     if (startBtnClicked == true){
         startBtnClicked = false;
-        interval = setInterval(startTimer, 250);
+        interval = setInterval(startTimer, 1000);
         startTimer()
     }
 })
